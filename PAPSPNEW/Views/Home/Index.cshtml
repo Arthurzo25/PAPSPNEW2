@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .display-4{
+        color: #212121;
+        font-family: "Clarendon Blk BT";
+        font-size: 27px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .ai {
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Inter', sans-serif;
+       display: flex;
+        align-items: center;
+        bottom: 0;
+        margin: 60px;
+        text-transform: initial;
+    }
+
+
+
+</style>
+<div class="text-center">
+    <h1 class="display-4">Ponto a Ponto São Paulo</h1>
+ </div>
+ 
+       <head>
+        <!-- Importe as bibliotecas do Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </head>
+
+
+        <!-- Crie um container para o carrossel -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Indicadores -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Slides -->
+          <div class="carousel-inner" style="height: 25em; ">
+            <div class="carousel-item active">
+              <img src="~/Image/paulista.jpg" alt="Foto 1">
+            </div>
+            <div class="carousel-item">
+              <img src="~/Image/tets.jpg" alt="Foto 2">
+            </div>
+            <div class="carousel-item">
+              <img src="~/Image/av.jpg" alt="Foto 3">
+            </div>
+          </div>
+
+          <!-- Controles -->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+
+        </div>
+<br><h4 class="ai">A PaPSP foi concebida para contrastar seus serviços dos de outros organizadores turísticos.
+   <br>O diferencial da marca é destrinchar a cidade de São Paulo com uma perspectiva nativa, de quem vive e entende a cidade. </h4>

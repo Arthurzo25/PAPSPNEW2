@@ -1,0 +1,123 @@
+﻿<style>
+    
+
+    .button-login{ 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin: 1%;
+    } 
+    .button-login button{ 
+    background-color: red;
+    border: none; 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    } 
+    .button-login button:hover { 
+    background-color: black; 
+    } 
+    .button-login button a{ 
+    text-decoration: none; 
+    font-weight: 500; 
+    color: #fff; 
+    }   
+    .input-box{ 
+
+        display: flex; 
+    flex-direction: column; 
+    margin-bottom: 1.1rem; 
+    padding-top: 1.0rem;
+
+    } 
+    .input-box input{ 
+    margin: 0.6 0; 
+    padding: 0.8rem 1.2rem; 
+    border: none; 
+    border-radius: 20px; 
+    box-shadow: 1px 1px 6px black; 
+    padding-bottom: 1.0rem;
+    } 
+    .input-box input:hover { 
+    background-color:#eeeeee75;                     
+    } 
+    .input-box input:focus-visible{ 
+    outline: 1px solid red; 
+    } 
+    .input-box label, 
+    .gender-tittle h6{ 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    color: #000000c0; 
+    } 
+    .input-box input::placeholder{ 
+    color: #000000be; 
+    } 
+    .linhasu{
+    border: none;
+    margin: 20px 0; /* ajuste os valores de margem conforme necessário */
+    border-top: 1px solid black;
+    }
+    .button-cadastrar{
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin: 0%;
+    }
+    .button-cadastrar button{ 
+    background-color: red;
+    border: none; 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    } 
+    .button-cadastrar button:hover{ 
+    background-color: black; 
+    } 
+    .button-cadastrar a{ 
+    text-decoration: none; 
+    font-weight: 500; 
+    color: #fff; 
+    }    
+    .title{
+        text-align:center;
+        justify-content:center;
+      }
+
+    .input-box {
+        text-align: center;
+        justify-content: center;
+    }
+      }
+</style>
+<div class="formulario">
+    <form action="#">
+        <div class="formulario-header">
+
+            <div class="title">
+                <h1>Login</h1>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="input-email">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="input-box">
+                <div class="input-email">
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="button-login">
+                    <button><a href="#">Entrar</a></button>
+                </div>
+
+                <div class="button-cadastrar">
+                    <button><a href="Formulariocadastro.html">Cadastrar-se</a></button>
+                </div>
+            </div>
+        </div>
+    </form>

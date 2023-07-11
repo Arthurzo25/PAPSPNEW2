@@ -1,0 +1,79 @@
+﻿@model PAPSPNEW.Models.TipoEntradum
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TipoEntradum</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdEntrada" />
+            <div class="form-group">
+                <label asp-for="IdPontoTuristico" class="control-label"></label>
+                <input asp-for="IdPontoTuristico" class="form-control" />
+                <span asp-validation-for="IdPontoTuristico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorEstudante" class="control-label"></label>
+                <input asp-for="ValorEstudante" class="form-control" />
+                <span asp-validation-for="ValorEstudante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorProfessor" class="control-label"></label>
+                <input asp-for="ValorProfessor" class="form-control" />
+                <span asp-validation-for="ValorProfessor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAdulto" class="control-label"></label>
+                <input asp-for="ValorAdulto" class="form-control" />
+                <span asp-validation-for="ValorAdulto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorMaior60" class="control-label"></label>
+                <input asp-for="ValorMaior60" class="form-control" />
+                <span asp-validation-for="ValorMaior60" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAcompanhantePcd" class="control-label"></label>
+                <input asp-for="ValorAcompanhantePcd" class="form-control" />
+                <span asp-validation-for="ValorAcompanhantePcd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntradaGratuita" class="control-label"></label>
+                <input asp-for="EntradaGratuita" class="form-control" />
+                <span asp-validation-for="EntradaGratuita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntradaGratuita1" class="control-label"></label>
+                <input asp-for="EntradaGratuita1" class="form-control" />
+                <span asp-validation-for="EntradaGratuita1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntradaGratuita2" class="control-label"></label>
+                <input asp-for="EntradaGratuita2" class="form-control" />
+                <span asp-validation-for="EntradaGratuita2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntradaGratuita3" class="control-label"></label>
+                <input asp-for="EntradaGratuita3" class="form-control" />
+                <span asp-validation-for="EntradaGratuita3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

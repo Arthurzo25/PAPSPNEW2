@@ -1,0 +1,43 @@
+﻿@model PAPSPNEW.Models.PontoTuristico
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PontoTuristico</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdPontoTuristico" class="control-label"></label>
+                <input asp-for="IdPontoTuristico" class="form-control" />
+                <span asp-validation-for="IdPontoTuristico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoPontoTuristico " class="control-label"></label>
+                <input asp-for="NomePontoTuristico" class="form-control" />
+                <span asp-validation-for="NomePontoTuristico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoPontoTuristico" class="control-label"></label>
+                <input asp-for="DescricaoPontoTuristico" class="form-control" />
+                <span asp-validation-for="DescricaoPontoTuristico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PAPSPNEW.Models.HorarioAtendimento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioIntervalo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioIntervalo2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioIntervalo3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioIntervalo4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaSemana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPontoTuristicoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioIntervalo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioIntervalo2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioIntervalo3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioIntervalo4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HorarioFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaSemana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPontoTuristicoNavigation.IdPontoTuristico)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdHorarioAtendimento">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdHorarioAtendimento">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdHorarioAtendimento">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

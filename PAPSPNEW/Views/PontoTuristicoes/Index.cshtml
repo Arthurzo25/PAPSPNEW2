@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PAPSPNEW.Models.PontoTuristico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePontoTuristico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPontoTuristico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoPontoTuristico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td> Ponto Turistico</td>
+                            <td>@Html.DisplayFor(modelItem => item.NomePontoTuristico)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="MuseuCatavento" width="100px" height="50px" src="~/Image/@Html.DisplayFor(modelItem => item.IdPontoTuristico)_.jpg">
+                                
+@*                                @Html.DisplayFor(modelItem => item.IdPontoTuristico)</td>*@
+                            <td>@Html.DisplayFor(modelItem => item.DescricaoPontoTuristico)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                </td>
+                <td>
+
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdPontoTuristico">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdPontoTuristico">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdPontoTuristico">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

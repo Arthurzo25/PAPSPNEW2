@@ -1,0 +1,69 @@
+﻿@model PAPSPNEW.Models.HorarioAtendimento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HorarioAtendimento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdPontoTuristico" class="control-label"></label>
+                <select asp-for="IdPontoTuristico" class="form-control" asp-items="ViewBag.IdPontoTuristico"></select>
+                <span asp-validation-for="IdPontoTuristico" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="IdHorarioAtendimento" />
+            <div class="form-group">
+                <label asp-for="HorarioIntervalo" class="control-label"></label>
+                <input asp-for="HorarioIntervalo" class="form-control" />
+                <span asp-validation-for="HorarioIntervalo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioIntervalo2" class="control-label"></label>
+                <input asp-for="HorarioIntervalo2" class="form-control" />
+                <span asp-validation-for="HorarioIntervalo2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioIntervalo3" class="control-label"></label>
+                <input asp-for="HorarioIntervalo3" class="form-control" />
+                <span asp-validation-for="HorarioIntervalo3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioIntervalo4" class="control-label"></label>
+                <input asp-for="HorarioIntervalo4" class="form-control" />
+                <span asp-validation-for="HorarioIntervalo4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioInicio" class="control-label"></label>
+                <input asp-for="HorarioInicio" class="form-control" />
+                <span asp-validation-for="HorarioInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HorarioFim" class="control-label"></label>
+                <input asp-for="HorarioFim" class="form-control" />
+                <span asp-validation-for="HorarioFim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaSemana" class="control-label"></label>
+                <input asp-for="DiaSemana" class="form-control" />
+                <span asp-validation-for="DiaSemana" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
