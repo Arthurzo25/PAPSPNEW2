@@ -12,9 +12,10 @@ public partial class PontoTuristico
 
     public virtual ICollection<Bairro> Bairros { get; set; } = new List<Bairro>();
 
-    public virtual ICollection<HorarioAtendimento> HorarioAtendimentos { get; set; } = new List<HorarioAtendimento>();
+    public List<HorarioAtendimento>HorarioAtendimentos { get; set; } = new List<HorarioAtendimento>();
 
     public virtual ICollection<TipoCategorium> TipoCategoria { get; set; } = new List<TipoCategorium>();
 
     public virtual ICollection<TipoContato> TipoContatos { get; set; } = new List<TipoContato>();
+
 }

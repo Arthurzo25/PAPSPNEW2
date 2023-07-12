@@ -1,4 +1,10 @@
-﻿@model IEnumerable<PAPSPNEW.Models.PontoTuristico>
+﻿<style>
+    .PONTOTURIST{
+        width:400px;
+        height:300px;
+    }
+</style>
+@model IEnumerable<PAPSPNEW.Models.PontoTuristico>
 
 @{
     ViewData["Title"] = "Index";
@@ -36,15 +42,14 @@
                         </tr>
                         <tr>
                             <td>
-                                <img class="MuseuCatavento" width="100px" height="50px" src="~/Image/@Html.DisplayFor(modelItem => item.IdPontoTuristico)_.jpg">
+                                <img class="PONTOTURIST" width="10%" height="10%"src="~/Image/@Html.DisplayFor(modelItem => item.IdPontoTuristico)_.jpg">
                                 
 @*                                @Html.DisplayFor(modelItem => item.IdPontoTuristico)</td>*@
                             <td>@Html.DisplayFor(modelItem => item.DescricaoPontoTuristico)</td>
                         </tr>
                     </table>
                 </td>
-                <td>
-                </td>
+                <td></td>
                 <td>
 
                 </td>

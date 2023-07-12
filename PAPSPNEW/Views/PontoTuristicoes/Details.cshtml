@@ -23,7 +23,7 @@
             @Html.DisplayFor(model => model.DescricaoPontoTuristico)
         </dd>
 
-        <img class="Imagem" width="100%" height="50%" 
+        <img class="Imagem" width="10%" height="25%" 
             src="~/Image/@Html.DisplayFor(model => model.IdPontoTuristico)_.jpg">
 
     </dl>
@@ -60,15 +60,57 @@
         </tbody>
     </table>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    E-Mail
+                </th>
+                <th>
+                    Telefone 1
+                </th>
+                <th>
+                    Telefone Comercial
+                </th>
+                <th>
+                    Celular
+                </th>
+                <th>
+                    Whatsapp
+                </th>
 
 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TipoContatos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefone1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelefoneComer)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Celular)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Whatsapp)
+                    </td>
 
 
-
+                </tr>
+            }
+        </tbody>
+    </table>
 
 
 </div>
 <div>
 @*    <a asp-action="Edit" asp-route-id="@Model?.IdPontoTuristico">Edit</a> |*@
-    <a asp-action="Index">Voltar</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Voltar</a>
 </div>

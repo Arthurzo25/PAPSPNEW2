@@ -21,10 +21,11 @@ namespace PAPSPNEW.Controllers
         // GET: PontoTuristicoes
         public async Task<IActionResult> Index()
         {
-              return _context.PontoTuristicos != null ? 
-                          View(await _context.PontoTuristicos.ToListAsync()) :
-                          Problem("Entity set 'BdPapSpContext.PontoTuristicos'  is null.");
+            return _context.PontoTuristicos != null ?
+                        View(await _context.PontoTuristicos.ToListAsync()) :
+                        Problem("Entity set 'BdPapSpContext.PontoTuristicos'  is null.");
         }
+
 
         // GET: PontoTuristicoes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -34,11 +35,29 @@ namespace PAPSPNEW.Controllers
                 return NotFound();
             }
 
-            var pontoTuristico = await _context.PontoTuristicos
-                .FirstOrDefaultAsync(m => m.IdPontoTuristico == id);
+
+            var pontoTuristico = await _context.PontoTuristicos.FirstOrDefaultAsync(m => m.IdPontoTuristico == id);
             if (pontoTuristico == null)
             {
                 return NotFound();
+            }
+            else
+            {
+                var horarioAtendimento = _context.HorarioAtendimentos.Where(m => m.IdPontoTuristico == id).Distinct();
+
+                pontoTuristico.HorarioAtendimentos = new List<HorarioAtendimento>();
+                pontoTuristico.TipoContatos = new List<TipoContato>();
+
+                foreach (var item in horarioAtendimento)
+                {
+                    pontoTuristico.HorarioAtendimentos.Add(item);
+                }
+                var tipoContatos = _context.TipoContatos.Where(m => m.IdPontoTuristico == id).Distinct();
+                foreach (var ritem in tipoContatos)
+                {
+                    pontoTuristico.TipoContatos.Add(ritem);
+                }
+
             }
 
             return View(pontoTuristico);
@@ -149,14 +168,14 @@ namespace PAPSPNEW.Controllers
             {
                 _context.PontoTuristicos.Remove(pontoTuristico);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PontoTuristicoExists(int id)
         {
-          return (_context.PontoTuristicos?.Any(e => e.IdPontoTuristico == id)).GetValueOrDefault();
+            return (_context.PontoTuristicos?.Any(e => e.IdPontoTuristico == id)).GetValueOrDefault();
         }
     }
 }
